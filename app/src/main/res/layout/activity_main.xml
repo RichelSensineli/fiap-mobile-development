@@ -10,13 +10,13 @@
     <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Welcome to Your Contact List!"
+            android:text="@string/welcome"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="100dp" android:id="@+id/textView"
             android:gravity="center" app:layout_constraintHorizontal_bias="0.0"/>
     <Button
-            android:text="New Contact"
+            android:text="@string/new_contact"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/btNewContact" android:layout_marginTop="40dp"
@@ -25,7 +25,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             android:layout_marginEnd="8dp" android:layout_marginStart="8dp"/>
     <Button
-            android:text="List All Contacts"
+            android:text="@string/list_contacts"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/btListAll" android:layout_marginTop="144dp"

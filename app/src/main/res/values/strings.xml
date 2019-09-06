@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">My Contact List</string>
+    <string name="welcome">Welcome to Your Contact List!</string>
+    <string name="new_contact">New Contact</string>
+    <string name="list_contacts">List All Contacts</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="email">E-mail</string>
+    <string name="save">Save</string>
 </resources>
