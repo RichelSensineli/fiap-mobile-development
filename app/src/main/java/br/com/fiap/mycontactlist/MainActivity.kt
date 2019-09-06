@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.fiap.mycontactlist.form.NewContactActivity
 import br.com.fiap.mycontactlist.list.ContactListActivity
+import br.com.fiap.mycontactlist.signup.SignupActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

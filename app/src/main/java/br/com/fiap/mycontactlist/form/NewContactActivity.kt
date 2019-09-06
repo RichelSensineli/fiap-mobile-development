@@ -22,7 +22,7 @@ class NewContactActivity : AppCompatActivity() {
             val newContact = Contact()
             newContact.name = etName.text.toString()
             newContact.phone = Integer.parseInt(etContactPhone.text.toString())
-            newContact.email = etNome.text.toString()
+            newContact.email = etNomeSignup.text.toString()
 
             val contactService = ServiceBuilder.buildService(ContactService::class.java)
             val requestCall = contactService.addContact(newContact)

@@ -10,7 +10,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_new_contact.*
 import kotlinx.android.synthetic.main.activity_signup.*
-import kotlinx.android.synthetic.main.activity_signup.etNome
 
 class SignupActivity : AppCompatActivity() {
 
@@ -24,8 +23,8 @@ class SignupActivity : AppCompatActivity() {
 
         btCreate.setOnClickListener {
             mAuth.createUserWithEmailAndPassword(
-                etNome.text.toString(),
-                etEmail.text.toString()
+                etPasswordLogin.text.toString(),
+                etPasswordSignup.text.toString()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
                     saveInRealTimeDatabase()
@@ -38,7 +37,7 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun saveInRealTimeDatabase() {
-        val user = User(etName.text.toString(), etEmail.text.toString(), etPh.text.toString())
+        val user = User(etName.text.toString(), etPasswordLogin.text.toString(), etPhoneSignup.text.toString())
         FirebaseDatabase.getInstance().getReference("Users")
             .child(FirebaseAuth.getInstance().currentUser!!.uid)
             .setValue(user)
@@ -47,7 +46,7 @@ class SignupActivity : AppCompatActivity() {
                     Toast.makeText(this, "Usuário criado com sucesso",
                         Toast.LENGTH_SHORT).show()
                     val returnIntent = Intent()
-                    returnIntent.putExtra("email", etEmail.text.toString())
+                    returnIntent.putExtra("email", etPasswordLogin.text.toString())
                     setResult(RESULT_OK, returnIntent)
                     finish()
                     finish()
