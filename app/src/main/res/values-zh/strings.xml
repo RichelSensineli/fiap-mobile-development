@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">我的联系清单</string>
+    <string name="email">电子邮件</string>
+    <string name="list_contacts">列出所有联系人</string>
+    <string name="name">名称</string>
+    <string name="new_contact">新联系人</string>
+    <string name="phone">电话</string>
+    <string name="save">保存</string>
+    <string name="welcome">欢迎来到您的联系清单</string>
+    <string name="Signup">注册</string>
+    <string name="hint_email">登录</string>
+    <string name="hint_password">密码</string>
+    <string name="login">登录</string>
+    <string name="hint_name">名称</string>
+    <string name="hint_phone">电话</string>
+</resources>
