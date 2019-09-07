@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Minha lista de contatos</string>
+    <string name="email">E-mail</string>
+    <string name="list_contacts">Listar todos contatos</string>
+    <string name="name">Nome</string>
+    <string name="new_contact">Novo contato</string>
+    <string name="phone">Telefone</string>
+    <string name="save">Salvar</string>
+    <string name="welcome">Bem-vindo a sua lista de contatos!</string>
+    <string name="Signup">Inscrever-se</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Senha</string>
+    <string name="login">Entrar</string>
+    <string name="hint_name">Nome</string>
+    <string name="hint_phone">Telefone</string>
+</resources>
