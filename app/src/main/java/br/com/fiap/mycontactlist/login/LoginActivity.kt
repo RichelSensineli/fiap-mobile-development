@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import br.com.fiap.mycontactlist.MainActivity
 import br.com.fiap.mycontactlist.R
 import br.com.fiap.mycontactlist.list.ContactListActivity
 import br.com.fiap.mycontactlist.signup.SignupActivity
@@ -16,6 +17,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
     private val newUserRequestCode = 1
+    private var userId: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
         if (mAuth.currentUser != null) {
-            goToHome()
+           // goToHome()
         }
 
         btLogin.setOnClickListener {
@@ -32,6 +34,8 @@ class LoginActivity : AppCompatActivity() {
                 etPasswordLogin.text.toString()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
+                    mAuth.currentUser?.reload()
+                    userId = mAuth.currentUser?.uid ?: ""
                     goToHome()
                 } else {
                     Toast.makeText(
@@ -49,7 +53,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun goToHome() {
-        val intent = Intent(this, ContactListActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("userId", userId)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         finish()

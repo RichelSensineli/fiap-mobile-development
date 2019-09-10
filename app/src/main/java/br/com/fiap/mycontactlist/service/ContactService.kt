@@ -12,8 +12,8 @@ interface ContactService {
     @GET("contact/{id}")
     fun getContact(@Path("id") id: Int): Call<Contact>
 
-    @POST("contact")
-    fun addContact(@Body newContact: Contact): Call<Contact>
+    @POST("https://vast-earth-70498.herokuapp.com/users/{id}/contact")
+    fun addContact(@Path("id") id: String, @Body newContact: Contact): Call<Contact>
 
     @PUT("contact/{id}")
     fun updateContact(
