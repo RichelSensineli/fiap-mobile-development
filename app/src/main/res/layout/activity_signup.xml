@@ -8,66 +8,74 @@
         tools:context=".signup.SignupActivity">
 
     <Button
-            android:id="@+id/btCreate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/Signup"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etPasswordSignup" />
-
-    <EditText
-            android:autofillHints=""
-            android:id="@+id/etNomeSignup"
+            android:id="@+id/btSignup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="108dp"
-            android:ems="10"
-            android:hint="@string/hint_name"
-            android:inputType="textPersonName"
+            android:layout_marginTop="64dp"
+            android:text="@string/Signup"
+            app:layout_constraintEnd_toEndOf="@+id/etPhoneSignup"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="@+id/etPhoneSignup"
+            app:layout_constraintTop_toBottomOf="@+id/etPhoneSignup" />
+
+    <TextView
+            android:id="@+id/tvSignUp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:text="SignUp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-            android:autofillHints=""
-            android:id="@+id/etPasswordLogin"
+            android:id="@+id/etNomeSignup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:ems="10"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            app:layout_constraintEnd_toEndOf="@+id/etNomeSignup"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/tvSignUp"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/etNomeSignup"
-            app:layout_constraintTop_toBottomOf="@+id/etNomeSignup" />
+            app:layout_constraintStart_toStartOf="@+id/tvSignUp"
+            app:layout_constraintTop_toBottomOf="@+id/tvSignUp" />
 
     <EditText
-            android:id="@+id/etPasswordSignup"
+            android:id="@+id/etEmailSignup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
             android:ems="10"
-            android:hint="@string/hint_password"
-            android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/etPhoneSignup"
-            app:layout_constraintTop_toBottomOf="@+id/etPhoneSignup" />
+            android:hint="Email"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/etNomeSignup"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/etNomeSignup"
+            app:layout_constraintTop_toBottomOf="@+id/etNomeSignup" />
 
     <EditText
             android:id="@+id/etPhoneSignup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:ems="10"
-            android:hint="@string/hint_phone"
+            android:hint="Phone"
             android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/etPasswordLogin"
-            app:layout_constraintStart_toStartOf="@+id/etPasswordLogin"
-            app:layout_constraintTop_toBottomOf="@+id/etPasswordLogin" />
+            app:layout_constraintEnd_toEndOf="@+id/etPasswordSignup"
+            app:layout_constraintStart_toStartOf="@+id/etPasswordSignup"
+            app:layout_constraintTop_toBottomOf="@+id/etPasswordSignup" />
+
+    <EditText
+            android:id="@+id/etPasswordSignup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="68dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/etEmailSignup"
+            app:layout_constraintStart_toStartOf="@+id/etEmailSignup"
+            app:layout_constraintTop_toBottomOf="@+id/etEmailSignup" />
 </androidx.constraintlayout.widget.ConstraintLayout>

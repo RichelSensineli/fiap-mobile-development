@@ -6,23 +6,24 @@ import retrofit2.http.*
 
 interface ContactService {
 
-    @GET("list")
+    @GET("users/{uid}/contacts")
     fun getContactList(@QueryMap filter: HashMap<String, String>) : Call<List<Contact>>
 
-    @GET("contact/{id}")
-    fun getContact(@Path("id") id: Int): Call<Contact>
+    @GET("users/{uid}/contacts/{id}")
+    fun getContact(@Path("uid") uid: Int, @Path("id") id: Int): Call<Contact>
 
-    @POST("https://vast-earth-70498.herokuapp.com/users/{id}/contact")
-    fun addContact(@Path("id") id: String, @Body newContact: Contact): Call<Contact>
+    @POST("users/{uid}/contact")
+    fun addContact(@Path("uid") id: String, @Body newContact: Contact): Call<Contact>
 
-    @PUT("contact/{id}")
+    @PUT("users/{uid}/contacts/{id}")
     fun updateContact(
+        @Path("uid") uid: Int,
         @Path("id") id: Int,
         @Field("name") name: String,
         @Field("phone") phone: Int,
         @Field("email") email: String
     ): Call<Contact>
 
-    @DELETE("contact/{id}")
-    fun deleteContact(@Path("id") id: Int): Call<Unit>
+    @DELETE("users/{uid}/contacts/{id}")
+    fun deleteContact(@Path("uid") uid: Int,@Path("id") id: Int): Call<Unit>
 }

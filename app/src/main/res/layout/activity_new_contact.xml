@@ -15,41 +15,51 @@
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:gravity="center"/>
+
     <EditText
+            android:id="@+id/etNameNewContact"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:layout_marginTop="72dp"
             android:ems="10"
-            android:id="@+id/etName" android:layout_marginTop="52dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvNewContact"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/tvNewContact"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/tvNewContact"
-            app:layout_constraintEnd_toEndOf="@+id/tvNewContact" app:layout_constraintHorizontal_bias="0.522"
-            android:hint="@string/name"/>
+            app:layout_constraintTop_toBottomOf="@+id/tvNewContact" />
+
     <EditText
+            android:id="@+id/etPhoneNewContact"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:layout_marginTop="72dp"
             android:ems="10"
-            android:id="@+id/etContactPhone"
-            app:layout_constraintStart_toStartOf="@+id/etName" android:layout_marginTop="40dp"
-            app:layout_constraintTop_toBottomOf="@+id/etName"
-            app:layout_constraintEnd_toEndOf="@+id/etName" app:layout_constraintHorizontal_bias="0.0"
-            android:hint="@string/phone"/>
+            android:hint="@string/phone"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/etNameNewContact"
+            app:layout_constraintStart_toStartOf="@+id/etNameNewContact"
+            app:layout_constraintTop_toBottomOf="@+id/etNameNewContact" />
+
     <EditText
+            android:id="@+id/etEmailNewContact"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:layout_marginTop="84dp"
             android:ems="10"
-            android:id="@+id/etNomeSignup"
-            app:layout_constraintStart_toStartOf="@+id/etContactPhone" app:layout_constraintEnd_toEndOf="@+id/etContactPhone"
-            android:layout_marginTop="40dp" app:layout_constraintTop_toBottomOf="@+id/etContactPhone"
-            app:layout_constraintHorizontal_bias="0.0" android:hint="@string/email"/>
+            android:hint="@string/email"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="@+id/etPhoneNewContact"
+            app:layout_constraintStart_toStartOf="@+id/etPhoneNewContact"
+            app:layout_constraintTop_toBottomOf="@+id/etPhoneNewContact" />
+
     <Button
-            android:text="@string/save"
+            android:id="@+id/btSaveNewContact"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/btSave" android:layout_marginTop="128dp"
-            app:layout_constraintTop_toBottomOf="@+id/etNomeSignup" app:layout_constraintStart_toStartOf="@+id/etNomeSignup"
-            app:layout_constraintEnd_toEndOf="@+id/etNomeSignup" android:layout_marginEnd="8dp"
-            app:layout_constraintHorizontal_bias="1.0"/>
+            android:layout_marginTop="92dp"
+            android:text="@string/save"
+            app:layout_constraintEnd_toEndOf="@+id/etEmailNewContact"
+            app:layout_constraintStart_toStartOf="@+id/etEmailNewContact"
+            app:layout_constraintTop_toBottomOf="@+id/etEmailNewContact" />
 </androidx.constraintlayout.widget.ConstraintLayout>

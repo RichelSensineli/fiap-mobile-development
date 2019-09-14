@@ -1,6 +1,5 @@
 package br.com.fiap.mycontactlist.form
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -19,15 +18,15 @@ class NewContactActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_contact)
 
-        btSave.setOnClickListener {
+        btSaveNewContact.setOnClickListener {
             val newContact = Contact()
             val userid = intent.getStringExtra("userId")
 
             System.out.println("USER ID: "+ userid)
 
-            newContact.name = etName.text.toString()
-            newContact.phone = Integer.parseInt(etContactPhone.text.toString())
-            newContact.email = etNomeSignup.text.toString()
+            newContact.name = etNameNewContact.text.toString()
+            newContact.phone = Integer.parseInt(etPhoneNewContact.text.toString())
+            newContact.email = etEmailNewContact.text.toString()
 
             val contactService = ServiceBuilder.buildService(ContactService::class.java)
             val requestCall = contactService.addContact(userid, newContact)
