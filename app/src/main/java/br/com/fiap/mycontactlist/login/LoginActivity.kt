@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.widget.Toast
 import br.com.fiap.mycontactlist.MainActivity
 import br.com.fiap.mycontactlist.R
-import br.com.fiap.mycontactlist.list.ContactListActivity
 import br.com.fiap.mycontactlist.signup.SignupActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*

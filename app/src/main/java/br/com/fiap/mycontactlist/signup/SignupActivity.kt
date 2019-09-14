@@ -1,17 +1,13 @@
 package br.com.fiap.mycontactlist.signup
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import br.com.fiap.mycontactlist.R
 import br.com.fiap.mycontactlist.model.User
-import br.com.fiap.mycontactlist.service.ContactService
-import br.com.fiap.mycontactlist.service.ServiceBuilder
-import br.com.fiap.mycontactlist.service.UserService
+import br.com.fiap.mycontactlist.service.RetrofitInitializer
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_new_contact.*
 import kotlinx.android.synthetic.main.activity_signup.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -51,30 +47,20 @@ class SignupActivity : AppCompatActivity() {
 
         newUser.uid = userid
 
-//        newUser.nome = etNomeSignup.text.toString()
-//        newUser.email = etEmailSignup.text.toString()
-//        newUser.fone = etPhoneSignup.text.toString()
-
-        val userService = ServiceBuilder.buildService(UserService::class.java)
-        val requestCall = userService.addUser(newUser)
-
-        val context = this
-
-        requestCall.enqueue(object: Callback<User> {
-
-            override fun onResponse(call: Call<User>, response: Response<User>) {
-                if (response.isSuccessful) {
-                    finish() // Move back to DestinationListActivity
-                    var newlyCreatedUser = response.body() // Use it or ignore it
-                    Toast.makeText(context, "User Successfully Created", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(context, "Failed to Create User", Toast.LENGTH_SHORT).show()
+        val call = RetrofitInitializer().userService().addUser(newUser)
+        call.enqueue(object: Callback<User?> {
+            override fun onResponse(call: Call<User?>?,
+                                    response: Response<User?>) {
+                response?.let {
+                    val user = it.body()
                 }
             }
 
-            override fun onFailure(call: Call<User>, t: Throwable) {
-                Toast.makeText(context, "Failed to Create User", Toast.LENGTH_SHORT).show()
+            override fun onFailure(call: Call<User?>?,
+                                   t: Throwable?) {
+                Log.e("onFailure error", t?.message)
             }
         })
+
     }
 }
