@@ -16,7 +16,6 @@ import retrofit2.Response
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
-
     private val newUser = User()
     private var userid = ""
 
@@ -43,24 +42,19 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun addUser() {
-        System.out.println("USER ID: "+ userid)
-
         newUser.uid = userid
 
         val call = RetrofitInitializer().userService().addUser(newUser)
         call.enqueue(object: Callback<User?> {
-            override fun onResponse(call: Call<User?>?,
-                                    response: Response<User?>) {
+            override fun onResponse(call: Call<User?>?, response: Response<User?>) {
                 response?.let {
                     val user = it.body()
                 }
             }
 
-            override fun onFailure(call: Call<User?>?,
-                                   t: Throwable?) {
+            override fun onFailure(call: Call<User?>?, t: Throwable?) {
                 Log.e("onFailure error", t?.message)
             }
         })
-
     }
 }

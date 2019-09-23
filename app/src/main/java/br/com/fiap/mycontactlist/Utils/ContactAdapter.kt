@@ -1,11 +1,13 @@
 package br.com.fiap.mycontacts.br.com.fiap.mycontacts.utils
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fiap.mycontactlist.R
+import br.com.fiap.mycontactlist.form.ContactActivity
 import br.com.fiap.mycontactlist.model.Contact
 
 class ContactAdapter(private var contactList: MutableList<Contact>) : RecyclerView.Adapter<ContactAdapter.ContactViewHolder>(){
@@ -39,8 +41,13 @@ class ContactAdapter(private var contactList: MutableList<Contact>) : RecyclerVi
         private var name : TextView
         private var phone : TextView
 
-        override fun onClick(p0: View?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        override fun onClick(v: View?) {
+            val context = itemView.context
+            val intent = Intent(context, ContactActivity::class.java)
+            intent.putExtra("contactName", name.text.toString())
+            intent.putExtra("contactPhone", phone.text.toString())
+            context.startActivity(intent)
+
         }
 
         init {

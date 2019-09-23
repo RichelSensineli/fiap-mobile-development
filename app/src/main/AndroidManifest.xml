@@ -11,14 +11,12 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity
-                android:name=".MyContactListActivity"
-                android:label="@string/title_activity_my_contact_list"
-                android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".login.LoginActivity"></activity>
-        <activity android:name=".signup.SignupActivity"></activity>
-        <activity android:name=".form.NewContactActivity"></activity>
-        <activity android:name=".list.ContactListActivity"></activity>
+        <activity android:name=".form.ContactActivity"></activity>
+        <activity android:name=".form.NewContactActivity" />
+        <activity android:name=".form.UpdateContactActivity" />
+        <activity android:name=".list.ContactListActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".signup.SignupActivity" />
         <activity
                 android:name=".splash.SplashActivity"
                 android:theme="@style/FullScreen">
@@ -28,7 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
