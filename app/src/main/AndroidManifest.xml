@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="br.com.fiap.mycontactlist">
+        package="br.com.fiap.mycontactlist">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
             android:allowBackup="true"
@@ -11,25 +11,24 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".login.LoginActivity">
-        </activity>
-        <activity android:name=".signup.SignupActivity">
-        </activity>
-        <activity android:name=".form.NewContactActivity">
-        </activity>
-        <activity android:name=".list.ContactListActivity">
-        </activity>
+        <activity
+                android:name=".MyContactListActivity"
+                android:label="@string/title_activity_my_contact_list"
+                android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".login.LoginActivity"></activity>
+        <activity android:name=".signup.SignupActivity"></activity>
+        <activity android:name=".form.NewContactActivity"></activity>
+        <activity android:name=".list.ContactListActivity"></activity>
         <activity
                 android:name=".splash.SplashActivity"
                 android:theme="@style/FullScreen">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

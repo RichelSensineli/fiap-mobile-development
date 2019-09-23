@@ -17,6 +17,9 @@ class MainActivity : AppCompatActivity() {
 
         btListAll.setOnClickListener {
             val proximaTela =  Intent(this@MainActivity, ContactListActivity::class.java)
+            val userId = intent.getStringExtra("userId")
+
+            proximaTela.putExtra("userId", userId)
             startActivity(proximaTela)
         }
 

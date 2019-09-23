@@ -7,17 +7,17 @@ import retrofit2.http.*
 interface ContactService {
 
     @GET("users/{uid}/contacts")
-    fun getContactList(@QueryMap filter: HashMap<String, String>) : Call<List<Contact>>
+    fun getContactList(@Path("uid") uid: String) : Call<ArrayList<Contact>>
 
     @GET("users/{uid}/contacts/{id}")
-    fun getContact(@Path("uid") uid: Int, @Path("id") id: Int): Call<Contact>
+    fun getContact(@Path("uid") uid: String, @Path("id") id: Int): Call<Contact>
 
     @POST("users/{uid}/contact")
-    fun addContact(@Path("uid") id: String, @Body newContact: Contact): Call<Contact>
+    fun addContact(@Path("uid") uid: String, @Body newContact: Contact): Call<Contact>
 
     @PUT("users/{uid}/contacts/{id}")
     fun updateContact(
-        @Path("uid") uid: Int,
+        @Path("uid") uid: String,
         @Path("id") id: Int,
         @Field("name") name: String,
         @Field("phone") phone: Int,
@@ -25,5 +25,5 @@ interface ContactService {
     ): Call<Contact>
 
     @DELETE("users/{uid}/contacts/{id}")
-    fun deleteContact(@Path("uid") uid: Int,@Path("id") id: Int): Call<Unit>
+    fun deleteContact(@Path("uid") uid: String,@Path("id") id: Int): Call<Unit>
 }
