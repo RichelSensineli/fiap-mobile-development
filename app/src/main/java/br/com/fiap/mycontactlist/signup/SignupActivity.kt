@@ -19,7 +19,7 @@ class SignupActivity : AppCompatActivity() {
     private val newUser = User()
     private var userid = ""
 
-        override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
