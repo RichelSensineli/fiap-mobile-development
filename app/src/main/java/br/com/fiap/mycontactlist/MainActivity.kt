@@ -14,9 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         btListAll.setOnClickListener {
             val proximaTela =  Intent(this@MainActivity, ContactListActivity::class.java)
+            val userId = intent.getStringExtra("userId")
+
+            proximaTela.putExtra("userId", userId)
             startActivity(proximaTela)
         }
 

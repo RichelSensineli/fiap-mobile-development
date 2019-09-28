@@ -22,8 +22,6 @@ class NewContactActivity : AppCompatActivity() {
             val newContact = Contact()
             val userid = intent.getStringExtra("userId")
 
-            System.out.println("USER ID: "+ userid)
-
             newContact.name = etNameNewContact.text.toString()
             newContact.phone = Integer.parseInt(etPhoneNewContact.text.toString())
             newContact.email = etEmailNewContact.text.toString()
@@ -45,8 +43,7 @@ class NewContactActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onFailure(call: Call<Contact?>?,
-                                       t: Throwable?) {
+                override fun onFailure(call: Call<Contact?>?, t: Throwable?) {
                     Toast.makeText(context, "Failed to Save Contact", Toast.LENGTH_SHORT).show()
                     Log.e("onFailure error", t?.message)
                 }
