@@ -19,43 +19,31 @@ class UpdateContactActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     private var userid = ""
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_contact)
 
-        mAuth = FirebaseAuth.getInstance()
-        val contactId = intent.getIntExtra("contactId", 0)
-
-
         btUpdateContact.setOnClickListener{
-            userid = mAuth.currentUser?.uid ?: ""
+            mAuth = FirebaseAuth.getInstance()
+            val updateContact = Contact()
+            updateContact.name = etUpdateContactName.text.toString()
+            updateContact.phone = Integer.parseInt(etUpdateContactPhone.text.toString())
+            updateContact.email = etUpdateContactEmail.text.toString()
+            updateContact.id = 0
 
-                updateContact(
-                contactId,
-                etUpdateContactName.text.toString(),
-                Integer.parseInt(etUpdateContactPhone.text.toString()),
-                etUpdateContactEmail.text.toString())
+            updateContact(updateContact)
         }
-
     }
 
-    private fun updateContact(contactId: Int,
-                              contactName: String,
-                              contactPhone: Int,
-                              contactEmail: String){
+    private fun updateContact(updateContact: Contact){
+        userid = mAuth.currentUser?.uid ?: ""
+
         val context = this
 
-        val call = RetrofitInitializer().contactService().updateContact(
-            userid,
-            contactId,
-            contactName,
-            contactPhone,
-            contactEmail)
+        val call = RetrofitInitializer().contactService().updateContact(userid, updateContact)
 
-        call.enqueue(object: Callback<Contact> {
-            override fun onResponse(call: Call<Contact>?, response: Response<Contact>
+        call.enqueue(object: Callback<Contact?> {
+            override fun onResponse(call: Call<Contact?>? , response: Response<Contact?>
             ) {
                 if (response.isSuccessful) {
                     finish()
@@ -68,7 +56,7 @@ class UpdateContactActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<Contact>?, t: Throwable?) {
+            override fun onFailure(call: Call<Contact?>?, t: Throwable?) {
                 Toast.makeText(context, "Failed to update Contact", Toast.LENGTH_SHORT).show()
                 Log.e("onFailure error", t?.message)
             }
