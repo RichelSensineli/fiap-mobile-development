@@ -14,4 +14,7 @@
     <string name="save">Sauvegarder</string>
     <string name="welcome">Bienvenue dans votre liste de contacts!</string>
     <string name="Signup">S\'inscrire</string>
+    <string name="my_contact">Mon contact</string>
+    <string name="update">Mise à jour</string>
+    <string name="delete">Effacer</string>
 </resources>

@@ -14,4 +14,7 @@
     <string name="login">Login</string>
     <string name="hint_name">Name</string>
     <string name="hint_phone">Phone</string>
+    <string name="my_contact">My Contact</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
 </resources>

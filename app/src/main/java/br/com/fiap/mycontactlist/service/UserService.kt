@@ -25,5 +25,7 @@ interface UserService {
     ): Call<User>
 
     @DELETE("users/{id}")
-    fun deleteUser(@Path("id") id: Int): Call<Unit>
+    fun deleteUser(
+        @Path("id") id: Int
+    ): Call<Unit>
 }

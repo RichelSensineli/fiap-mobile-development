@@ -5,14 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import br.com.fiap.mycontactlist.MainActivity
 import br.com.fiap.mycontactlist.R
-import br.com.fiap.mycontactlist.model.Contact
 import br.com.fiap.mycontactlist.service.RetrofitInitializer
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_contact.*
 import kotlinx.android.synthetic.main.activity_contact.btUpdateContact
-import kotlinx.android.synthetic.main.activity_update_contact.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,10 +29,12 @@ class ContactActivity : AppCompatActivity() {
 
         tvContactName.text = contactName
 
+        //Chamar próxima tela passando o contactId
         btUpdateContact.setOnClickListener {
-            val intent = Intent(this, UpdateContactActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(intent)
+            val proximaTela = Intent(this, UpdateContactActivity::class.java)
+            val contactId = intent.getIntExtra("contactId", contactId)
+            proximaTela.putExtra("contactId", contactId)
+            startActivity(proximaTela)
             finish()
         }
 
@@ -50,8 +49,7 @@ class ContactActivity : AppCompatActivity() {
 
         val call = RetrofitInitializer().contactService().deleteContact(userid, contactId)
         call.enqueue(object: Callback<Unit?> {
-            override fun onResponse(call: Call<Unit?>?,
-                                    response: Response<Unit?>
+            override fun onResponse(call: Call<Unit?>?,response: Response<Unit?>
             ) {
                 if (response.isSuccessful) {
                     finish()

@@ -7,23 +7,33 @@ import retrofit2.http.*
 interface ContactService {
 
     @GET("users/{uid}/contacts")
-    fun getContactList(@Path("uid") uid: String) : Call<ArrayList<Contact>>
+    fun getContactList(
+        @Path("uid") uid: String
+    ) : Call<ArrayList<Contact>>
 
     @GET("users/{uid}/contacts/{id}")
-    fun getContact(@Path("uid") uid: String, @Path("id") id: Int): Call<Contact>
+    fun getContact(
+        @Path("uid") uid: String,
+        @Path("id") id: Int
+    ): Call<Contact>
 
     @POST("users/{uid}/contact")
-    fun addContact(@Path("uid") uid: String, @Body newContact: Contact): Call<Contact>
+    fun addContact(
+        @Path("uid") uid: String,
+        @Body newContact: Contact
+    ): Call<Contact>
 
     @PUT("users/{uid}/contacts/{id}")
     fun updateContact(
         @Path("uid") uid: String,
         @Path("id") id: Int,
-        @Field("name") name: String,
-        @Field("phone") phone: Int,
-        @Field("email") email: String
+        @Body updateContact: Contact
     ): Call<Contact>
 
     @DELETE("users/{uid}/contacts/{id}")
-    fun deleteContact(@Path("uid") uid: String,@Path("id") id: Int): Call<Unit>
+    fun deleteContact(
+        @Path("uid") uid: String,
+        @Path("id") id: Int
+    ) : Call<Unit>
+
 }
