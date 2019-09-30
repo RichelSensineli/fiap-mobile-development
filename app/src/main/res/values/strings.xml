@@ -3,6 +3,9 @@
     <string name="welcome">Welcome to Your Contact List!</string>
     <string name="new_contact">New Contact</string>
     <string name="list_contacts">List All Contacts</string>
+    <string name="my_contact">My Contact</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
     <string name="name">Name</string>
     <string name="phone">Phone</string>
     <string name="email">Email</string>
@@ -13,5 +16,4 @@
     <string name="hint_name">Name</string>
     <string name="hint_phone">Phone</string>
     <string name="hint_password">Password</string>
-    <string name="title_activity_my_contact_list">MyContactListActivity</string>
-</resources>
+   </resources>

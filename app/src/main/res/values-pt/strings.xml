@@ -14,4 +14,7 @@
     <string name="login">Entrar</string>
     <string name="hint_name">Nome</string>
     <string name="hint_phone">Telefone</string>
+    <string name="my_contact">Meu contato</string>
+    <string name="update">Atualizar</string>
+    <string name="delete">Excluir</string>
 </resources>

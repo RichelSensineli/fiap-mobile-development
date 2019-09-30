@@ -23,17 +23,11 @@ interface ContactService {
         @Body newContact: Contact
     ): Call<Contact>
 
-
-
-    @Headers("Content-Type: application/json")
     @PUT("users/{uid}/contacts/{id}")
     fun updateContact(
         @Path("uid") uid: String,
+        @Path("id") id: Int,
         @Body updateContact: Contact
-//        @Path("id") id: Int,
-//        @Field("name") name: String,
-//        @Field("phone") phone: Int,
-//        @Field("email") email: String
     ): Call<Contact>
 
     @DELETE("users/{uid}/contacts/{id}")

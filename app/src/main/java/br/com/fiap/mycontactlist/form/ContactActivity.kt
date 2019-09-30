@@ -29,10 +29,12 @@ class ContactActivity : AppCompatActivity() {
 
         tvContactName.text = contactName
 
+        //Chamar próxima tela passando o contactId
         btUpdateContact.setOnClickListener {
-            val intent = Intent(this, UpdateContactActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(intent)
+            val proximaTela = Intent(this, UpdateContactActivity::class.java)
+            val contactId = intent.getIntExtra("contactId", contactId)
+            proximaTela.putExtra("contactId", contactId)
+            startActivity(proximaTela)
             finish()
         }
 
@@ -45,11 +47,9 @@ class ContactActivity : AppCompatActivity() {
     private fun deleteContact(contactId: Int){
         val context = this
 
-        val call = RetrofitInitializer().contactService().deleteContact(
-            userid, contactId)
+        val call = RetrofitInitializer().contactService().deleteContact(userid, contactId)
         call.enqueue(object: Callback<Unit?> {
-            override fun onResponse(call: Call<Unit?>?,
-                                    response: Response<Unit?>
+            override fun onResponse(call: Call<Unit?>?,response: Response<Unit?>
             ) {
                 if (response.isSuccessful) {
                     finish()

@@ -23,24 +23,29 @@ class UpdateContactActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_contact)
 
-        btUpdateContact.setOnClickListener{
+            btUpdateContact.setOnClickListener{
+
             mAuth = FirebaseAuth.getInstance()
+
+            //Capturando o contactId da tela anterior
+            val contactId = intent.getIntExtra("contactId", 0)
             val updateContact = Contact()
+
+            //Definindo os novos atributos do contato
             updateContact.name = etUpdateContactName.text.toString()
             updateContact.phone = Integer.parseInt(etUpdateContactPhone.text.toString())
             updateContact.email = etUpdateContactEmail.text.toString()
-            updateContact.id = 0
+            updateContact.id =  contactId
 
-            updateContact(updateContact)
+            //Chamar o método de atualização do contato
+            updateContact(contactId, updateContact)
         }
     }
 
-    private fun updateContact(updateContact: Contact){
+    private fun updateContact(contactId: Int, updateContact: Contact){
         userid = mAuth.currentUser?.uid ?: ""
-
         val context = this
-
-        val call = RetrofitInitializer().contactService().updateContact(userid, updateContact)
+        val call = RetrofitInitializer().contactService().updateContact(userid, contactId, updateContact)
 
         call.enqueue(object: Callback<Contact?> {
             override fun onResponse(call: Call<Contact?>? , response: Response<Contact?>
@@ -53,6 +58,7 @@ class UpdateContactActivity : AppCompatActivity() {
                     Toast.makeText(context, "Contact Successfully updated", Toast.LENGTH_SHORT).show()
                 }else {
                     Toast.makeText(context, "Failed to update Contact", Toast.LENGTH_SHORT).show()
+                    System.err.println(response)
                 }
             }
 
