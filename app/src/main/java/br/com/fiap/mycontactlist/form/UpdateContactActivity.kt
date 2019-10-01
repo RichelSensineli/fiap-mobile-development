@@ -23,40 +23,57 @@ class UpdateContactActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_contact)
 
-            btUpdateContact.setOnClickListener{
+        carregaDados()
+
+        btUpdateContact.setOnClickListener {
 
             mAuth = FirebaseAuth.getInstance()
 
-            //Capturando o contactId da tela anterior
+            //Capturando informacoes do contato da tela anterior
             val contactId = intent.getIntExtra("contactId", 0)
+
             val updateContact = Contact()
 
             //Definindo os novos atributos do contato
             updateContact.name = etUpdateContactName.text.toString()
             updateContact.phone = Integer.parseInt(etUpdateContactPhone.text.toString())
             updateContact.email = etUpdateContactEmail.text.toString()
-            updateContact.id =  contactId
+            updateContact.id = contactId
 
             //Chamar o método de atualização do contato
             updateContact(contactId, updateContact)
         }
     }
 
-    private fun updateContact(contactId: Int, updateContact: Contact){
+    private fun carregaDados() {
+
+        val contactName = intent.getStringExtra("contactName")
+        val contactPhone = intent.getStringExtra("contactPhone")
+        val contactEmail = intent.getStringExtra("contactEmail")
+
+        etUpdateContactName.setText(contactName)
+        etUpdateContactPhone.setText(contactPhone)
+        etUpdateContactEmail.setText(contactEmail)
+    }
+
+    private fun updateContact(contactId: Int, updateContact: Contact) {
         userid = mAuth.currentUser?.uid ?: ""
         val context = this
-        val call = RetrofitInitializer().contactService().updateContact(userid, contactId, updateContact)
+        val call =
+            RetrofitInitializer().contactService().updateContact(userid, contactId, updateContact)
 
-        call.enqueue(object: Callback<Contact?> {
-            override fun onResponse(call: Call<Contact?>? , response: Response<Contact?>
+        call.enqueue(object : Callback<Contact?> {
+            override fun onResponse(
+                call: Call<Contact?>?, response: Response<Contact?>
             ) {
                 if (response.isSuccessful) {
                     finish()
                     response?.let {
                         val Contact = it.body()
                     }
-                    Toast.makeText(context, "Contact Successfully updated", Toast.LENGTH_SHORT).show()
-                }else {
+                    Toast.makeText(context, "Contact Successfully updated", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
                     Toast.makeText(context, "Failed to update Contact", Toast.LENGTH_SHORT).show()
                     System.err.println(response)
                 }

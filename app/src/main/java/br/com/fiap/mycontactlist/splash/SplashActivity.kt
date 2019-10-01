@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.animation.AnimationUtils
-import br.com.fiap.mycontactlist.MainActivity
 import br.com.fiap.mycontactlist.R
 import br.com.fiap.mycontactlist.form.NewContactActivity
 import br.com.fiap.mycontactlist.login.LoginActivity

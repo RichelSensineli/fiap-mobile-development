@@ -11,7 +11,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".form.ContactActivity"></activity>
+        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".form.ContactActivity" />
         <activity android:name=".form.NewContactActivity" />
         <activity android:name=".form.UpdateContactActivity" />
         <activity android:name=".list.ContactListActivity" />

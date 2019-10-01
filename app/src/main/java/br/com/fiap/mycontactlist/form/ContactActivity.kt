@@ -24,16 +24,24 @@ class ContactActivity : AppCompatActivity() {
         setContentView(R.layout.activity_contact)
 
         mAuth = FirebaseAuth.getInstance()
-        val contactName = intent.getStringExtra("contactName")
         val contactId = intent.getIntExtra("contactId", 0)
+        val contactName = intent.getStringExtra("contactName")
+        val contactPhone = intent.getStringExtra("contactPhone")
+        val contactEmail = intent.getStringExtra("contactEmail")
 
         tvContactName.text = contactName
+        tvContactPhone.text = contactPhone
+        tvContactEmail.text = contactEmail
 
         //Chamar próxima tela passando o contactId
         btUpdateContact.setOnClickListener {
             val proximaTela = Intent(this, UpdateContactActivity::class.java)
-            val contactId = intent.getIntExtra("contactId", contactId)
+            
             proximaTela.putExtra("contactId", contactId)
+            proximaTela.putExtra("contactName", contactName)
+            proximaTela.putExtra("contactPhone", contactPhone)
+            proximaTela.putExtra("contactEmail", contactEmail)
+
             startActivity(proximaTela)
             finish()
         }

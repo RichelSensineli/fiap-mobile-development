@@ -40,6 +40,7 @@ class ContactAdapter(private var contactList: MutableList<Contact>) : RecyclerVi
         private lateinit var contact: Contact
         private var name : TextView
         private var phone : TextView
+        private var email : String = ""
         private var contactId: Int? = 0
 
         override fun onClick(v: View?) {
@@ -47,6 +48,7 @@ class ContactAdapter(private var contactList: MutableList<Contact>) : RecyclerVi
             val intent = Intent(context, ContactActivity::class.java)
             intent.putExtra("contactName", name.text.toString())
             intent.putExtra("contactPhone", phone.text.toString())
+            intent.putExtra("contactEmail", email)
             intent.putExtra("contactId", contactId)
             context.startActivity(intent)
         }
@@ -65,6 +67,7 @@ class ContactAdapter(private var contactList: MutableList<Contact>) : RecyclerVi
 
             name.text = contact.name
             phone.text = contact.phone.toString()
+            email = contact.email.toString()
             contactId = contact.id
         }
     }
