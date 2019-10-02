@@ -33,4 +33,14 @@
             app:layout_constraintEnd_toEndOf="@+id/textView" android:gravity="center"
             app:layout_constraintHorizontal_bias="0.0" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"/>
 
+    <Button
+            android:id="@+id/btAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:text="About"
+            app:layout_constraintEnd_toEndOf="@+id/btNewContact"
+            app:layout_constraintStart_toStartOf="@+id/btNewContact"
+            app:layout_constraintTop_toBottomOf="@+id/btNewContact" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

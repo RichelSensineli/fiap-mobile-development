@@ -22,7 +22,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/etUpdateContactPhone"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -36,7 +36,7 @@
             app:layout_constraintTop_toBottomOf="@+id/etUpdateContactName" />
 
     <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/etUpdateContactEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -47,7 +47,7 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/etUpdateContactPhone" />
 
     <Button
             android:id="@+id/btUpdateContact"
@@ -58,8 +58,9 @@
             android:layout_marginEnd="8dp"
             android:text="Update"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+            app:layout_constraintTop_toBottomOf="@+id/etUpdateContactEmail" />
 
     <TextView
             android:id="@+id/textView3"

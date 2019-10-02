@@ -29,5 +29,11 @@ class MainActivity : AppCompatActivity() {
             proximaTela.putExtra("userId", userId)
             startActivity(proximaTela)
         }
+
+        btAbout.setOnClickListener {
+            val proximaTela =  Intent(this@MainActivity, AboutActivity::class.java)
+
+            startActivity(proximaTela)
+        }
     }
 }

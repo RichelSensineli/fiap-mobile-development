@@ -29,6 +29,7 @@ class NewContactActivity : AppCompatActivity() {
             val context = this
 
             val call = RetrofitInitializer().contactService().addContact(userid, newContact)
+
             call.enqueue(object: Callback<Contact?> {
                 override fun onResponse(call: Call<Contact?>?,
                                         response: Response<Contact?>) {

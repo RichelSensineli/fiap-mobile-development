@@ -5,14 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import br.com.fiap.mycontactlist.MainActivity
 import br.com.fiap.mycontactlist.R
-import br.com.fiap.mycontactlist.model.Contact
 import br.com.fiap.mycontactlist.service.RetrofitInitializer
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_contact.*
 import kotlinx.android.synthetic.main.activity_contact.btUpdateContact
-import kotlinx.android.synthetic.main.activity_update_contact.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,15 +24,25 @@ class ContactActivity : AppCompatActivity() {
         setContentView(R.layout.activity_contact)
 
         mAuth = FirebaseAuth.getInstance()
-        val contactName = intent.getStringExtra("contactName")
         val contactId = intent.getIntExtra("contactId", 0)
+        val contactName = intent.getStringExtra("contactName")
+        val contactPhone = intent.getStringExtra("contactPhone")
+        val contactEmail = intent.getStringExtra("contactEmail")
 
         tvContactName.text = contactName
+        tvContactPhone.text = contactPhone
+        tvContactEmail.text = contactEmail
 
+        //Chamar próxima tela passando o contactId
         btUpdateContact.setOnClickListener {
-            val intent = Intent(this, UpdateContactActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(intent)
+            val proximaTela = Intent(this, UpdateContactActivity::class.java)
+            
+            proximaTela.putExtra("contactId", contactId)
+            proximaTela.putExtra("contactName", contactName)
+            proximaTela.putExtra("contactPhone", contactPhone)
+            proximaTela.putExtra("contactEmail", contactEmail)
+
+            startActivity(proximaTela)
             finish()
         }
 
@@ -50,8 +57,7 @@ class ContactActivity : AppCompatActivity() {
 
         val call = RetrofitInitializer().contactService().deleteContact(userid, contactId)
         call.enqueue(object: Callback<Unit?> {
-            override fun onResponse(call: Call<Unit?>?,
-                                    response: Response<Unit?>
+            override fun onResponse(call: Call<Unit?>?,response: Response<Unit?>
             ) {
                 if (response.isSuccessful) {
                     finish()

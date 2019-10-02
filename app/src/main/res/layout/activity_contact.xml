@@ -8,58 +8,57 @@
 
     <TextView
             android:id="@+id/tvContactName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="64dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="394dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="50dp"
             android:hint="@string/hint_name"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvMyContacts"
             app:layout_constraintTop_toBottomOf="@+id/tvMyContacts" />
 
     <TextView
             android:id="@+id/tvContactPhone"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="394dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="40dp"
             android:hint="@string/hint_phone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvContactName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvContactName"
             app:layout_constraintTop_toBottomOf="@+id/tvContactName" />
 
     <TextView
             android:id="@+id/tvContactEmail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="48dp"
+            android:layout_width="394dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="8dp"
             android:hint="@string/hint_email"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvContactPhone" />
 
     <Button
             android:id="@+id/btUpdateContact"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="168dp"
-            android:text="Update"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/update"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvContactEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/tvContactEmail"
+            tools:text="@string/update" />
 
     <Button
             android:id="@+id/btDeleteContact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="56dp"
-            android:layout_marginTop="168dp"
-            android:text="Delete"
+            android:layout_marginTop="100dp"
+            android:text="@string/delete"
+            app:layout_constraintEnd_toEndOf="@+id/tvContactEmail"
+            app:layout_constraintHorizontal_bias="0.053"
             app:layout_constraintStart_toEndOf="@+id/btUpdateContact"
             app:layout_constraintTop_toBottomOf="@+id/tvContactEmail" />
 
@@ -67,10 +66,12 @@
             android:id="@+id/tvMyContacts"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="76dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
             android:gravity="center"
-            android:text="My Contact"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/my_contact" />
 </androidx.constraintlayout.widget.ConstraintLayout>
