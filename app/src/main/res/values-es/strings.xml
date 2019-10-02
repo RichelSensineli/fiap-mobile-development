@@ -17,4 +17,7 @@
     <string name="my_contact">Mi contacto</string>
     <string name="update">Actualizar</string>
     <string name="delete">Eliminar</string>
+    <string name="keep_logged">Mantenme conectado</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="blank_fields">El correo electrónico o la contraseña no deben dejarse en blanco</string>
 </resources>
