@@ -23,11 +23,17 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         mAuth = FirebaseAuth.getInstance()
-        if (mAuth.currentUser != null) {
-           // goToHome()
+        if (mAuth.currentUser != null && chbManterLogado.isChecked) {
+           goToHome()
         }
 
         btLogin.setOnClickListener {
+
+            if (etEmailLogin.text.toString() == "" || etPasswordLogin.text.toString() == "") {
+                Toast.makeText(this, R.string.blank_fields, Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             mAuth.signInWithEmailAndPassword(
                 etEmailLogin.text.toString(),
                 etPasswordLogin.text.toString()

@@ -17,4 +17,7 @@
     <string name="my_contact">My Contact</string>
     <string name="update">Update</string>
     <string name="delete">Delete</string>
+    <string name="keep_logged">Keep me logged in</string>
+    <string name="logout">Logout</string>
+    <string name="blank_fields">Email or password should not be left blank</string>
 </resources>
