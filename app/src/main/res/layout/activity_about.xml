@@ -8,10 +8,12 @@
 
     <TextView
             android:id="@+id/tvAbout"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="124dp"
-            android:text="About My Contact List"
+            android:gravity="center"
+            android:text="@string/about_my_contact_list"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -20,8 +22,10 @@
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="44dp"
-            android:text="Names"
+            android:text="@string/names"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/tvRM"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
@@ -32,15 +36,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
             android:layout_marginEnd="156dp"
-            android:text="RM"
+            android:text="@string/rm"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
 
     <TextView
             android:id="@+id/tvNameAna"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="40dp"
+            android:gravity="center"
             android:text="Ana"
             app:layout_constraintEnd_toStartOf="@+id/tvRMAna"
             app:layout_constraintHorizontal_bias="0.538"
@@ -49,9 +56,11 @@
 
     <TextView
             android:id="@+id/tvNameEdson"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
+            android:gravity="center"
             android:text="Edson"
             app:layout_constraintEnd_toStartOf="@+id/tvRMEdson"
             app:layout_constraintHorizontal_bias="0.54"
@@ -60,9 +69,11 @@
 
     <TextView
             android:id="@+id/tvNameHugo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
+            android:gravity="center"
             android:text="Hugo"
             app:layout_constraintEnd_toStartOf="@+id/tvRMHugo"
             app:layout_constraintHorizontal_bias="0.545"
@@ -71,9 +82,11 @@
 
     <TextView
             android:id="@+id/tvNameRichel"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
+            android:gravity="center"
             android:text="Richel"
             app:layout_constraintEnd_toStartOf="@+id/tvRMRichel"
             app:layout_constraintHorizontal_bias="0.53"
@@ -82,7 +95,7 @@
 
     <TextView
             android:id="@+id/tvRMAna"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="144dp"
@@ -92,7 +105,7 @@
 
     <TextView
             android:id="@+id/tvRMEdson"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="144dp"
@@ -102,7 +115,7 @@
 
     <TextView
             android:id="@+id/tvRMHugo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="144dp"
@@ -112,7 +125,7 @@
 
     <TextView
             android:id="@+id/tvRMRichel"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="144dp"

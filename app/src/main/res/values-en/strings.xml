@@ -20,4 +20,8 @@
     <string name="keep_logged">Keep me logged in</string>
     <string name="logout">Logout</string>
     <string name="blank_fields">Email or password should not be left blank</string>
+    <string name="about_my_contact_list">About My Contact List</string>
+    <string name="names">Names</string>
+    <string name="rm">Students ID</string>
+    <string name="about">About</string>
 </resources>

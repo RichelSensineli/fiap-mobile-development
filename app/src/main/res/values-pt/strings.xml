@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Minha lista de contatos</string>
+    <string name="app_name">Minha Lista de Contatos</string>
     <string name="email">E-mail</string>
     <string name="list_contacts">Listar todos contatos</string>
     <string name="name">Nome</string>
@@ -20,4 +20,8 @@
     <string name="keep_logged">Mantenha-me conectado</string>
     <string name="logout">Sair</string>
     <string name="blank_fields">E-mail ou senha não devem ser deixados em branco</string>
+    <string name="about_my_contact_list">Sobre Minha Lista de Contatos</string>
+    <string name="names">Nomes</string>
+    <string name="rm">RM</string>
+    <string name="about">Sobre</string>
 </resources>

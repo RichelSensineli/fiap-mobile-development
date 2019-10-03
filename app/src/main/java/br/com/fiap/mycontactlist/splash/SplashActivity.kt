@@ -19,17 +19,8 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        val preferences = getSharedPreferences(
-            "user_preferences",
-            Context.MODE_PRIVATE
-        )
-        val isFirstOpen = preferences.getBoolean("open_first", true)
-        if (true) {
-            showLogin()
-        } else {
-            markAppAlreadyOpen(preferences)
-            showSplash()
-        }
+
+        showSplash()
     }
 
     private fun markAppAlreadyOpen(preferences: SharedPreferences) {
@@ -37,6 +28,7 @@ class SplashActivity : AppCompatActivity() {
         editor.putBoolean("open_first", false)
         editor.apply()
     }
+
     private fun showLogin() {
         val nextScreen = Intent(this@SplashActivity, LoginActivity::class.java)
         startActivity(nextScreen)
@@ -49,9 +41,17 @@ class SplashActivity : AppCompatActivity() {
         ivLogo.clearAnimation()
         ivLogo.startAnimation(anim)
         Handler().postDelayed({
-            val nextScreen = Intent(this@SplashActivity, NewContactActivity::class.java)
-            startActivity(nextScreen)
-            finish()
+            val preferences = getSharedPreferences(
+                "user_preferences",
+                Context.MODE_PRIVATE
+            )
+            val isFirstOpen = preferences.getBoolean("open_first", true)
+            if (true) {
+                markAppAlreadyOpen(preferences)
+                showLogin()
+            } else {
+                showLogin()
+            }
         }, TEMPO_AGUARDO_SPLASHSCREEN)
     }
 }

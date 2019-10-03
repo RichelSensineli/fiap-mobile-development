@@ -8,13 +8,18 @@
         tools:context=".form.NewContactActivity">
 
     <TextView
-            android:text="@string/new_contact"
+            android:id="@+id/tvNewContact"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/tvNewContact" android:layout_marginTop="72dp"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:gravity="center"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:text="@string/new_contact"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
             android:id="@+id/etNameNewContact"

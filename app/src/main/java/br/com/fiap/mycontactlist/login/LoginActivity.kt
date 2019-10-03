@@ -54,6 +54,7 @@ class LoginActivity : AppCompatActivity() {
         btSignup.setOnClickListener {
             startActivityForResult(Intent(this, SignupActivity::class.java),
                 newUserRequestCode)
+            finish()
         }
     }
 

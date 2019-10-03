@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
             FirebaseAuth.getInstance().signOut()
             val proximaTela = Intent(this@MainActivity, LoginActivity::class.java)
             startActivity(proximaTela)
+            finish()
         }
     }
 }
