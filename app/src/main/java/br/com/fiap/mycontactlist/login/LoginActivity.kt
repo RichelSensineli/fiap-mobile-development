@@ -24,7 +24,11 @@ class LoginActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
         if (mAuth.currentUser != null && chbManterLogado.isChecked) {
-           goToHome()
+
+            mAuth.currentUser?.reload()
+            userId = mAuth.currentUser?.uid ?: ""
+
+            goToHome()
         }
 
         btLogin.setOnClickListener {
@@ -52,8 +56,10 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btSignup.setOnClickListener {
-            startActivityForResult(Intent(this, SignupActivity::class.java),
-                newUserRequestCode)
+            startActivityForResult(
+                Intent(this, SignupActivity::class.java),
+                newUserRequestCode
+            )
             finish()
         }
     }
