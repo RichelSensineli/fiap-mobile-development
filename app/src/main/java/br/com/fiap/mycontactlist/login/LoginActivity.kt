@@ -1,6 +1,7 @@
 package br.com.fiap.mycontactlist.login
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,8 +23,13 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val userLogged = getSharedPreferences(
+            "user_logged",
+            Context.MODE_PRIVATE
+        )
+
         mAuth = FirebaseAuth.getInstance()
-        if (mAuth.currentUser != null && chbManterLogado.isChecked) {
+        if (mAuth.currentUser != null && userLogged.getBoolean("user_logged", true)) {
 
             mAuth.currentUser?.reload()
             userId = mAuth.currentUser?.uid ?: ""
@@ -45,6 +51,17 @@ class LoginActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     mAuth.currentUser?.reload()
                     userId = mAuth.currentUser?.uid ?: ""
+
+                    if(chbManterLogado.isChecked){
+                        val editor = userLogged.edit()
+                        editor.putBoolean("user_logged", true)
+                        editor.apply()
+                    } else {
+                        val editor = userLogged.edit()
+                        editor.putBoolean("user_logged", false)
+                        editor.apply()
+                    }
+
                     goToHome()
                 } else {
                     Toast.makeText(
