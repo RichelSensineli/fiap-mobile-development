@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 class RetrofitInitializer {
 
     private val okHttp = OkHttpClient.Builder()
-        .callTimeout(15, TimeUnit.SECONDS)
+        .callTimeout(30, TimeUnit.SECONDS)
         .build()
 
     private val retrofit = Retrofit.Builder()
