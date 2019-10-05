@@ -1,5 +1,6 @@
 package br.com.fiap.mycontactlist
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val userLogged = getSharedPreferences(
+            "user_logged",
+            Context.MODE_PRIVATE
+        )
 
         btListAll.setOnClickListener {
             val proximaTela = Intent(this@MainActivity, ContactListActivity::class.java)
@@ -40,8 +46,14 @@ class MainActivity : AppCompatActivity() {
         btSair.setOnClickListener {
             //Sair
             FirebaseAuth.getInstance().signOut()
+
+            val editor = userLogged.edit()
+            editor.putBoolean("user_logged", false)
+            editor.apply()
+
             val proximaTela = Intent(this@MainActivity, LoginActivity::class.java)
             startActivity(proximaTela)
+            finish()
         }
     }
 }
