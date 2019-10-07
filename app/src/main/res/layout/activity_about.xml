@@ -10,126 +10,161 @@
             android:id="@+id/tvAbout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="124dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:gravity="center"
             android:text="@string/about_my_contact_list"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
             android:id="@+id/tvName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="44dp"
+            android:layout_width="240dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
             android:text="@string/names"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/tvRM"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
-
-    <TextView
-            android:id="@+id/tvRM"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="156dp"
-            android:text="@string/rm"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
-
-    <TextView
-            android:id="@+id/tvNameAna"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="40dp"
-            android:gravity="center"
-            android:text="Ana"
-            app:layout_constraintEnd_toStartOf="@+id/tvRMAna"
-            app:layout_constraintHorizontal_bias="0.538"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvName" />
-
-    <TextView
-            android:id="@+id/tvNameEdson"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
-            android:text="Edson"
-            app:layout_constraintEnd_toStartOf="@+id/tvRMEdson"
-            app:layout_constraintHorizontal_bias="0.54"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameAna" />
-
-    <TextView
-            android:id="@+id/tvNameHugo"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
-            android:text="Hugo"
-            app:layout_constraintEnd_toStartOf="@+id/tvRMHugo"
-            app:layout_constraintHorizontal_bias="0.545"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameEdson" />
-
-    <TextView
-            android:id="@+id/tvNameRichel"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
-            android:text="Richel"
-            app:layout_constraintEnd_toStartOf="@+id/tvRMRichel"
-            app:layout_constraintHorizontal_bias="0.53"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNameHugo" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/ivLogo"
+            app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
 
     <TextView
             android:id="@+id/tvRMAna"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="144dp"
+            android:background="@drawable/border_item"
+            android:gravity="center"
             android:text="334056"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvRM"
+            app:layout_constraintHorizontal_bias="0.465"
+            app:layout_constraintStart_toStartOf="@+id/tvRM"
             app:layout_constraintTop_toBottomOf="@+id/tvRM" />
 
     <TextView
             android:id="@+id/tvRMEdson"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="144dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_item"
+            android:gravity="center"
             android:text="333819"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvRMAna"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvRMAna"
             app:layout_constraintTop_toBottomOf="@+id/tvRMAna" />
 
     <TextView
-            android:id="@+id/tvRMHugo"
+            android:id="@+id/tvNameEdson"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="144dp"
-            android:text="333823"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvRMEdson" />
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_item"
+            android:gravity="start"
+            android:text="@string/developerNameEdson"
+            app:layout_constraintEnd_toEndOf="@+id/tvNameAna"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvNameAna"
+            app:layout_constraintTop_toBottomOf="@+id/tvNameAna" />
 
     <TextView
             android:id="@+id/tvRMRichel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="144dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border_item"
+            android:gravity="center"
             android:text="333805"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvRMHugo"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvRMHugo"
             app:layout_constraintTop_toBottomOf="@+id/tvRMHugo" />
+
+    <TextView
+            android:id="@+id/tvNameAna"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/border_item"
+            android:fadingEdge="horizontal"
+            android:gravity="start"
+            android:text="@string/developerNameAna"
+            app:layout_constraintEnd_toEndOf="@+id/tvName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    <TextView
+            android:id="@+id/tvRM"
+            android:layout_width="110dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/rm"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/ivLogo"
+            app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+
+    <TextView
+            android:id="@+id/tvRMHugo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_item"
+            android:gravity="center"
+            android:text="333823"
+            app:layout_constraintEnd_toEndOf="@+id/tvRMEdson"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvRMEdson"
+            app:layout_constraintTop_toBottomOf="@+id/tvRMEdson" />
+
+    <TextView
+            android:id="@+id/tvNameRichel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border_item"
+            android:gravity="start"
+            android:text="@string/developerNameRichel"
+            app:layout_constraintEnd_toEndOf="@+id/tvNameHugo"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvNameHugo"
+            app:layout_constraintTop_toBottomOf="@+id/tvNameHugo" />
+
+    <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="0dp"
+            android:layout_height="71dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvAbout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvAbout"
+            app:layout_constraintTop_toBottomOf="@+id/tvAbout"
+            app:srcCompat="@drawable/mycontactlist_icon" />
+
+    <TextView
+            android:id="@+id/tvNameHugo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/border_item"
+            android:gravity="start"
+            android:text="@string/developerNameHugo"
+            app:layout_constraintEnd_toEndOf="@+id/tvNameEdson"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvNameEdson"
+            app:layout_constraintTop_toBottomOf="@+id/tvNameEdson" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

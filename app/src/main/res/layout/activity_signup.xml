@@ -11,10 +11,11 @@
             android:id="@+id/btSignup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/botao_customizado"
             android:text="@string/Signup"
             app:layout_constraintEnd_toEndOf="@+id/etPhoneSignup"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/etPhoneSignup"
             app:layout_constraintTop_toBottomOf="@+id/etPhoneSignup" />
 
@@ -51,6 +52,7 @@
             android:ems="10"
             android:hint="@string/hint_email"
             android:inputType="textPersonName"
+
             app:layout_constraintEnd_toEndOf="@+id/etNomeSignup"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/etNomeSignup"

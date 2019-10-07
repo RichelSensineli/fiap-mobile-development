@@ -21,6 +21,10 @@
     <string name="blank_fields">Email or password should not be left blank</string>
     <string name="about_my_contact_list">About My Contact List</string>
     <string name="names">Names</string>
-    <string name="rm">RM</string>
+    <string name="rm">Matricula</string>
+    <string name="developerNameAna" translatable="false">Ana Carla Brasil</string>
+    <string name="developerNameEdson" translatable="false">Edson Raimundo Júnior</string>
+    <string name="developerNameHugo" translatable="false">Hugo Ohnishi Destito</string>
+    <string name="developerNameRichel" translatable="false">Richel Sensineli</string>
     <string name="about">About</string>
 </resources>

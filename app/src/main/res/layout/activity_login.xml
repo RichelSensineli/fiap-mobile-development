@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="76dp"
             android:text="@string/login"
+            android:background="@drawable/botao_customizado"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/etPasswordLogin"
@@ -48,8 +49,11 @@
             android:id="@+id/btSignup"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/botao_customizado"
             android:text="@string/Signup"
             app:layout_constraintEnd_toEndOf="@+id/btLogin"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/btLogin"
             app:layout_constraintTop_toBottomOf="@+id/btLogin" />
 
