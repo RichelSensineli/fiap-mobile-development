@@ -64,6 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="92dp"
             android:text="@string/save"
+            android:background="@drawable/botao_customizado"
             app:layout_constraintEnd_toEndOf="@+id/etEmailNewContact"
             app:layout_constraintStart_toStartOf="@+id/etEmailNewContact"
             app:layout_constraintTop_toBottomOf="@+id/etEmailNewContact" />
