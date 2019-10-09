@@ -64,14 +64,14 @@ class ContactActivity : AppCompatActivity() {
                     response?.let {
                         val Contact = it.body()
                     }
-                    Toast.makeText(context, "Contact Successfully Deleted", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.contact_deleted, Toast.LENGTH_SHORT).show()
                 }else {
-                    Toast.makeText(context, "Failed to Delete Contact", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.failed_delete, Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<Unit?>?, t: Throwable?) {
-                Toast.makeText(context, "Failed to Delete Contact", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.failed_delete, Toast.LENGTH_SHORT).show()
                 Log.e("onFailure error", t?.message)
             }
         })

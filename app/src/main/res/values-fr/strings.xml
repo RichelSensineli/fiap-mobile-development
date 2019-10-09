@@ -24,4 +24,13 @@
     <string name="names">Les Noms</string>
     <string name="rm">Inscriptions</string>
     <string name="about">À propos de</string>
+    <string name="contact_deleted"> Contact supprimé avec succès </string>
+    <string name="failed_delete"> Échec de la suppression du contact</string>
+    <string name="contact_saved"> Contact enregistré avec succès </string>
+    <string name="failed_save"> Échec d\'enregistrement du contact </string>
+    <string name="contact_updated"> Contact mis à jour avec succès </string>
+    <string name="failed_update"> Echec de la mise à jour du contact </string>
+    <string name="failed_load"> Échec du chargement des contacts </string>
+    <string name="account_created"> Compte créé avec succès! "</string>
+    <string name="no_contacts">Vous n\'avez pas de contacts sauvegardés!</string>
 </resources>

@@ -1,14 +1,12 @@
 package br.com.fiap.mycontactlist.list
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.RelativeLayout
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.com.fiap.mycontactlist.MainActivity
 import br.com.fiap.mycontactlist.R
 import br.com.fiap.mycontactlist.model.Contact
 import br.com.fiap.mycontactlist.service.RetrofitInitializer
@@ -53,19 +51,24 @@ class ContactListActivity : AppCompatActivity() {
                                     response: Response<ArrayList<Contact>?>
             ){
                 response?.body()?.let {
-                        contactList = it
+
+                    contactList = it
+
+                    if(contactList.size > 0){
                         loadList()
+                    } else {
+                        Toast.makeText(context, R.string.no_contacts, Toast.LENGTH_SHORT).show()
                     }
+                }
                 findViewById<RelativeLayout>(R.id.loadingPanel).visibility = View.GONE;
             }
 
             override fun onFailure(call: Call<ArrayList<Contact>?>?,
                                    t: Throwable?) {
-                Toast.makeText(context, "Failed to Load the Contact \n" + t?.message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.failed_load.toString() + " \n" + t?.message, Toast.LENGTH_SHORT).show()
                 Log.e("onFailure error", t?.message)
 
                 }
-
         })
     }
 

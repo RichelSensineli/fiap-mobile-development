@@ -24,4 +24,13 @@
     <string name="names">Nombres</string>
     <string name="rm">Registro</string>
     <string name="about">Acerca</string>
+    <string name="contact_deleted"> Contacto eliminado correctamente </string>
+    <string name="failed_delete"> Error al eliminar el contacto </string>
+    <string name="contact_saved"> Contacto guardado correctamente </string>
+    <string name="failed_save"> Error al guardar el contacto </string>
+    <string name="contact_updated"> Contacto actualizado correctamente </string>
+    <string name="failed_update"> Error al actualizar el contacto </string>
+    <string name="failed_load"> Error al cargar los contactos </string>
+    <string name="account_created"> ¡Cuenta creada correctamente! "</string>
+    <string name="no_contacts">¡No tienes contactos guardados!</string>
 </resources>

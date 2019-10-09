@@ -13,7 +13,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
 class UpdateContactActivity : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
@@ -71,16 +70,16 @@ class UpdateContactActivity : AppCompatActivity() {
                     response?.let {
                         val Contact = it.body()
                     }
-                    Toast.makeText(context, "Contact Successfully updated", Toast.LENGTH_SHORT)
+                    Toast.makeText(context, R.string.contact_updated, Toast.LENGTH_SHORT)
                         .show()
                 } else {
-                    Toast.makeText(context, "Failed to update Contact", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.failed_update, Toast.LENGTH_SHORT).show()
                     System.err.println(response)
                 }
             }
 
             override fun onFailure(call: Call<Contact?>?, t: Throwable?) {
-                Toast.makeText(context, "Failed to update Contact", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, R.string.failed_update, Toast.LENGTH_SHORT).show()
                 Log.e("onFailure error", t?.message)
             }
         })

@@ -38,14 +38,14 @@ class NewContactActivity : AppCompatActivity() {
                         response?.let {
                             val Contact = it.body()
                         }
-                        Toast.makeText(context, "Contact Successfully Saved", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, R.string.contact_saved, Toast.LENGTH_SHORT).show()
                     }else {
-                        Toast.makeText(context, "Failed to Save Contact", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, R.string.failed_save, Toast.LENGTH_SHORT).show()
                     }
                 }
 
                 override fun onFailure(call: Call<Contact?>?, t: Throwable?) {
-                    Toast.makeText(context, "Failed to Save Contact", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.failed_save, Toast.LENGTH_SHORT).show()
                     Log.e("onFailure error", t?.message)
                 }
             })

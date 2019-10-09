@@ -24,4 +24,13 @@
     <string name="names">Nomes</string>
     <string name="rm">RM</string>
     <string name="about">Sobre</string>
+    <string name="contact_deleted">Contato Deletado com Sucesso</string>
+    <string name="failed_delete">Falha ao Deletar Contato</string>
+    <string name="contact_saved">Contato Salvo com Sucesso</string>
+    <string name="failed_save">Falha ao Salvar Contato</string>
+    <string name="contact_updated">Contato Atualizado com Sucesso</string>
+    <string name="failed_update">Falha ao Atualizar Contato</string>
+    <string name="failed_load">Falha ao Carregar Contatos</string>
+    <string name="account_created">Conta Criada com Sucesso!"</string>
+    <string name="no_contacts">Você Não Possui Contatos Salvos!</string>
 </resources>
